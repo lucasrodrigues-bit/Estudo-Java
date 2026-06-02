@@ -1,19 +1,17 @@
 public class Banco {
-    public static void main(String[] args) {
+     static void main(String[] args) {
+        ContaBancaria conta1 = new ContaBancaria("Lucas Deiró",-666);
+        conta1.depositar(3000);
+        conta1.sacar(2000);
+        conta1.status();
 
-        ContaBancaria conta = new ContaBancaria();
 
-        conta.setDados(
-                "Lucas Deiró",
-                2342.87
-        );
-
-        conta.exibirSaldo();
-
-        boolean saqueRealizado = conta.sacar(2000);
-
-        System.out.println("Saque realizado?"+saqueRealizado);
-
-        conta.exibirSaldo();
+        ContaBancaria conta2 = new ContaBancaria("Bárbara",11983);
+        conta2.depositar(2000);
+        conta2.sacar(9883);
+        conta2.status();
     }
+
 }
+
+

@@ -1,28 +1,41 @@
 public class Caneta {
-    public String cor;
-    public String modelo;
-    private double ponta;
-    protected int carga;
-    protected  boolean tampada;
-    public void status(){
-        System.out.println("Caneta:" + this.cor);//this(autoreferencia)-->aponta para o objeto(c1)
-        System.out.println("Está tampada?" + this.tampada);
-        System.out.println("Modelo:" + this.modelo);
-        System.out.println("Ponta:" + this.ponta);
-        System.out.println(("Carga:" + this.carga));
+    private String modelo;
+    private float ponta;
+    private boolean tampada;
+    private String cor;
+    //alt+fn1+insert=cria automaticamente setters,getters e constructors
+    public Caneta(){
+        this.tampar();
+        this.cor="Azul";
+    }
 
+    public String getModelo(){
+        return this.modelo;
     }
-        public void rabiscar(){
-        if(this.tampada || this.carga==0){
-            System.out.println("Não consegue rabiscar no momento!");
-        }else{
-            System.out.println("Pode rabiscar!");
-        }
+    public void setModelo(String modelo){
+        this.modelo=modelo;
     }
-    protected void tampar(){
+    public float getPonta(){
+        return ponta;
+    }
+    public void setPonta(float ponta){
+        this.ponta=ponta;
+    }
+
+    public void tampar(){
         this.tampada=true;
     }
-    protected void destampar(){
+
+    public void destampar(){
         this.tampada=false;
     }
+
+    public void status(){
+        System.out.println("Características da caneta:");
+        System.out.printf("Cor:%s%n",this.cor);
+        System.out.printf("Modelo:%s%n",getModelo());
+        System.out.printf("Ponta:%.2f%n",getPonta());
+        System.out.println("Tampada:"+this.tampada );
+    }
+
 }
