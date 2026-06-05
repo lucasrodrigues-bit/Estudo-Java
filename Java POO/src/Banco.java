@@ -1,17 +1,18 @@
-public class Banco {
-     static void main(String[] args) {
-        ContaBancaria conta1 = new ContaBancaria("Lucas Deiró",-666);
-        conta1.depositar(3000);
-        conta1.sacar(2000);
-        conta1.status();
-
-
-        ContaBancaria conta2 = new ContaBancaria("Bárbara",11983);
-        conta2.depositar(2000);
-        conta2.sacar(9883);
-        conta2.status();
+public class Banco{
+    static void main(String[] args) {
+        ContaBancaria conta1 = new ContaBancaria("Lucas Deiró",0,"5577-3","CC",false);
+        conta1.exibirDadosConta();
+        conta1.abrirConta();
+        conta1.exibirDadosConta();
+        conta1.depositar();
+        conta1.exibirDadosConta();
+        conta1.pagarMensalidade();
+        conta1.exibirDadosConta();
+        conta1.sacar();
+        conta1.exibirDadosConta();
+        conta1.fecharConta();
+        conta1.exibirDadosConta();
     }
-
 }
 
 
