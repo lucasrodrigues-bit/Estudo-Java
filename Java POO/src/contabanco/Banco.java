@@ -1,3 +1,5 @@
+package contabanco;
+
 public class Banco{
     static void main(String[] args) {
         ContaBancaria conta1 = new ContaBancaria("Lucas Deiró",0,"5577-3","CC",false);

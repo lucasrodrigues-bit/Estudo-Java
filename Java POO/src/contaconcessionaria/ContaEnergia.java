@@ -1,3 +1,5 @@
+package contaconcessionaria;
+
 public class ContaEnergia {
 
      private int numeroConta;

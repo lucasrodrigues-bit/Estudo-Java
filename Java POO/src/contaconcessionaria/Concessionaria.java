@@ -1,3 +1,5 @@
+package contaconcessionaria;
+
 public class Concessionaria {
     public static void main(String[] args) {
     ContaEnergia conta = new ContaEnergia();

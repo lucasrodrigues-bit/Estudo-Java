@@ -1,3 +1,5 @@
+package contabanco;
+
 import java.util.Scanner;
 
 //Classe principal
@@ -42,7 +44,7 @@ public class ContaBancaria {
 
         while (!this.tipo.equalsIgnoreCase("Cc") && !this.tipo.equalsIgnoreCase("Cp")) {
             System.out.println("Tipo inválido tente novamente");
-            tipo = teclado.nextLine();
+            this.tipo = teclado.nextLine();
         }
 
         switch (tipo.toUpperCase()) {
@@ -84,7 +86,7 @@ public class ContaBancaria {
 
             if (decisao.equalsIgnoreCase("sim")) {
 
-                if (Math.abs(saldo) >= 0.01) {
+                if (Math.abs(this.saldo) >= 0.01) {
                     System.out.println("Impossível fechar a conta. O saldo deve ser zero.");
                     return;
                 }
@@ -113,7 +115,7 @@ public class ContaBancaria {
             return;
         }
 
-        saldo += valor;
+        this.saldo += valor;
         System.out.println("Depósito realizado com sucesso!");
     }
 
@@ -135,12 +137,12 @@ public class ContaBancaria {
             return;
         }
 
-        if (valor > saldo){
+        if (valor > this.saldo){
             System.out.println("Saldo insuficiente");
             return;
         }
 
-        saldo -= valor;
+        this.saldo -= valor;
         System.out.println("Saque autorizado,saldo atual:"+getSaldo());
     }
 
@@ -148,10 +150,10 @@ public class ContaBancaria {
         if(status) {
             switch (getTipo().toUpperCase()) {
                 case "CC":
-                    saldo -= 12;
+                    this.saldo -= 12;
                     break;
                 case "CP":
-                    saldo -= 20;
+                    this.saldo -= 20;
             }
         }
     }
